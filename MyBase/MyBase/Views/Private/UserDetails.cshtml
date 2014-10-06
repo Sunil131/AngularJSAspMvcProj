@@ -1,0 +1,98 @@
+﻿@model MyBase.Infrastructure.Core.PresentationModel.UserDetailsModel
+
+@{
+    ViewBag.Title = "UserDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UserDetails</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>UserDetailsModel</legend>
+
+        <legend>
+            <h5>Please verify your details for this UserName :</h5>
+            @Html.LabelFor(model => model.UserName)</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.First)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.First)
+            @Html.ValidationMessageFor(model => model.First)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Middle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Middle)
+            @Html.ValidationMessageFor(model => model.Middle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Last)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Last)
+            @Html.ValidationMessageFor(model => model.Last)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateOfBirth)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateOfBirth)
+            @Html.ValidationMessageFor(model => model.DateOfBirth)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mobile)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mobile)
+            @Html.ValidationMessageFor(model => model.Mobile)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreatedBy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreatedBy)
+            @Html.ValidationMessageFor(model => model.CreatedBy)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreatedOn)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreatedOn)
+            @Html.ValidationMessageFor(model => model.CreatedOn)
+        </div>
+
+        <p>
+            <input type="submit" value="Submit" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back", "ShowUserDetails",new {UserName = @Model.UserName,UserId = @Model.UserId})
+    @Html.ActionLink("Continue", "App")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

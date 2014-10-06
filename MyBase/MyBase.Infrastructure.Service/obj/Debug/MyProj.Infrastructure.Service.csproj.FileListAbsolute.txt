@@ -1,0 +1,5 @@
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyProj.Infrastructure.Service\bin\Debug\MyProj.Infrastructure.Service.dll
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyProj.Infrastructure.Service\bin\Debug\MyProj.Infrastructure.Service.pdb
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyProj.Infrastructure.Service\obj\Debug\MyProj.Infrastructure.Service.csprojResolveAssemblyReference.cache
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyProj.Infrastructure.Service\obj\Debug\MyProj.Infrastructure.Service.dll
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyProj.Infrastructure.Service\obj\Debug\MyProj.Infrastructure.Service.pdb

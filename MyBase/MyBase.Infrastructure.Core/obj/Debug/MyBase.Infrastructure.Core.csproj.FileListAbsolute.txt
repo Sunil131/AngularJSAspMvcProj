@@ -1,0 +1,14 @@
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyBase.Infrastructure.Core\bin\Debug\MyBase.Infrastructure.Core.dll
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyBase.Infrastructure.Core\bin\Debug\MyBase.Infrastructure.Core.pdb
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyBase.Infrastructure.Core\bin\Debug\MyBase.Domain.Core.dll
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyBase.Infrastructure.Core\bin\Debug\MyBase.Domain.Core.pdb
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyBase.Infrastructure.Core\obj\Debug\MyBase.Infrastructure.Core.csprojResolveAssemblyReference.cache
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyBase.Infrastructure.Core\obj\Debug\MyBase.Infrastructure.Core.dll
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyBase.Infrastructure.Core\obj\Debug\MyBase.Infrastructure.Core.pdb
+E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Infrastructure.Core\bin\Debug\MyBase.Infrastructure.Core.dll
+E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Infrastructure.Core\bin\Debug\MyBase.Infrastructure.Core.pdb
+E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Infrastructure.Core\bin\Debug\MyBase.Domain.Core.dll
+E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Infrastructure.Core\bin\Debug\MyBase.Domain.Core.pdb
+E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Infrastructure.Core\obj\Debug\MyBase.Infrastructure.Core.csprojResolveAssemblyReference.cache
+E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Infrastructure.Core\obj\Debug\MyBase.Infrastructure.Core.dll
+E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Infrastructure.Core\obj\Debug\MyBase.Infrastructure.Core.pdb

@@ -1,0 +1,10 @@
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyBaseProjDB\bin\Debug\MyBaseProjDB.dacpac
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyBaseProjDB\bin\Debug\MyBaseProjDB.dll
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyBaseProjDB\bin\Debug\MyBaseProjDB.pdb
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyBaseProjDB\obj\Debug\MyBaseProjDB.dll
+D:\MyResearchs\GitSource\BaseProj\MyBase\MyBaseProjDB\obj\Debug\MyBaseProjDB.pdb
+E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBaseProjDB\bin\Debug\MyBaseProjDB.dacpac
+E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBaseProjDB\bin\Debug\MyBaseProjDB.dll
+E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBaseProjDB\bin\Debug\MyBaseProjDB.pdb
+E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBaseProjDB\obj\Debug\MyBaseProjDB.dll
+E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBaseProjDB\obj\Debug\MyBaseProjDB.pdb
