@@ -6,7 +6,8 @@
     [MetaTags]    NVARCHAR (1000) NOT NULL,
     [CreatedBy]   INT             NOT NULL,
     [CreatedOn]   DATETIME        NOT NULL,
-    CONSTRAINT [PK_Posts] PRIMARY KEY CLUSTERED ([ID] ASC),
-    CONSTRAINT [FK_Posts_Posts] FOREIGN KEY ([ID]) REFERENCES [dbo].[Posts] ([ID])
+    CONSTRAINT [PK_Posts] PRIMARY KEY CLUSTERED ([ID] ASC)
 );
+
+
 

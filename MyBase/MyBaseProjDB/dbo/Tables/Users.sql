@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Users] (
-    [ID]          INT           IDENTITY (1, 1) NOT NULL,
+    [ID]          INT           NOT NULL,
     [First]       NVARCHAR (50) NOT NULL,
     [Middle]      NVARCHAR (50) NULL,
     [Last]        NVARCHAR (50) NOT NULL,
@@ -11,6 +11,8 @@
     CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([ID] ASC),
     CONSTRAINT [FK_Users_UserProfile] FOREIGN KEY ([ID]) REFERENCES [dbo].[UserProfile] ([UserId])
 );
+
+
 
 
 

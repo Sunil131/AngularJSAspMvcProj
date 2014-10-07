@@ -174,5 +174,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="MyBaseProjDB.publish.xml" />
+    <None Include="SchemaCompare\SqlSchemaCompare2.scmp" />
   </ItemGroup>
 </Project>
