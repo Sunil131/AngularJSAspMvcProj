@@ -27,9 +27,6 @@ namespace MyBase.Domain.Core.Entities
         public int CreatedBy { get; set; }
         public System.DateTime CreatedOn { get; set; }
     
-        public virtual Post Posts1 { get; set; }
-        public virtual Post Post1 { get; set; }
         public virtual ICollection<ThreadPost> ThreadPosts { get; set; }
-        public virtual PostDetail PostDetail { get; set; }
     }
 }

@@ -9,6 +9,10 @@
     [CreatedBy]   INT           NULL,
     [CreatedOn]   DATETIME      NULL,
     CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([ID] ASC),
-    CONSTRAINT [FK_Users_UserProfile1] FOREIGN KEY ([ID]) REFERENCES [dbo].[UserProfile] ([UserId])
+    CONSTRAINT [FK_Users_UserProfile] FOREIGN KEY ([ID]) REFERENCES [dbo].[UserProfile] ([UserId])
 );
+
+
+
+
 

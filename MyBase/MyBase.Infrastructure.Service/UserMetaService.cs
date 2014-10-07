@@ -36,14 +36,14 @@ namespace MyBase.Infrastructure.Service
 
        public UserDetailsModel FindUserProfileByUserId(string UserName)
        {
-           var userDetailModel = Mapper.Map<UserProfile, UserDetailsModel>(_userRepo.GetUserByUserId(cond => cond.UserName.Equals(UserName)));
+           var userDetailModel = Mapper.Map<UserProfile, UserDetailsModel>(_userRepo.GetUserByUserId(cond => cond.UserName.ToUpper().Equals(UserName.ToUpper())));
            return userDetailModel;
 
        }
 
        public UserProfile FindUserDetailsByUserId(string UserName)
        {
-           return _userRepo.GetUserByUserId(cond => cond.UserName.Equals(UserName));
+           return _userRepo.GetUserByUserId(cond => cond.UserName.ToUpper().Equals(UserName.ToUpper()));
 
        }
 

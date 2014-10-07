@@ -17,3 +17,13 @@ E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Domain.Core\bin\Debug\Enti
 E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Domain.Core\obj\Debug\MyBase.Domain.Core.csprojResolveAssemblyReference.cache
 E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Domain.Core\obj\Debug\MyBase.Domain.Core.dll
 E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Domain.Core\obj\Debug\MyBase.Domain.Core.pdb
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Core\bin\Debug\MyBase.Domain.Core.dll.config
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Core\bin\Debug\MyBase.Domain.Core.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Core\bin\Debug\MyBase.Domain.Core.pdb
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Core\bin\Debug\EntityFramework.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Core\bin\Debug\EntityFramework.SqlServer.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Core\bin\Debug\EntityFramework.xml
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Core\bin\Debug\EntityFramework.SqlServer.xml
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Core\obj\Debug\MyBase.Domain.Core.csprojResolveAssemblyReference.cache
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Core\obj\Debug\MyBase.Domain.Core.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Core\obj\Debug\MyBase.Domain.Core.pdb

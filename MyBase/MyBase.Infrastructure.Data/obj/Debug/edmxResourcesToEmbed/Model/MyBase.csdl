@@ -1,505 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="MyBaseProjModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="aspnet_Applications">
-    <Key>
-      <PropertyRef Name="ApplicationId" />
-    </Key>
-    <Property Name="ApplicationName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="LoweredApplicationName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
-    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="aspnet_Membership" Relationship="Self.FK__aspnet_Me__Appli__21B6055D" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
-    <NavigationProperty Name="aspnet_Paths" Relationship="Self.FK__aspnet_Pa__Appli__5AEE82B9" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
-    <NavigationProperty Name="aspnet_Roles" Relationship="Self.FK__aspnet_Ro__Appli__440B1D61" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
-    <NavigationProperty Name="aspnet_Users" Relationship="Self.FK__aspnet_Us__Appli__0DAF0CB0" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
-  </EntityType>
-  <EntityType Name="aspnet_Membership">
-    <Key>
-      <PropertyRef Name="UserId" />
-    </Key>
-    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
-    <Property Name="UserId" Type="Guid" Nullable="false" />
-    <Property Name="Password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
-    <Property Name="PasswordSalt" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="MobilePIN" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="LoweredEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="PasswordQuestion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="PasswordAnswer" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
-    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
-    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
-    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
-    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="aspnet_Applications" Relationship="Self.FK__aspnet_Me__Appli__21B6055D" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
-    <NavigationProperty Name="aspnet_Users" Relationship="Self.FK__aspnet_Me__UserI__22AA2996" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
-  </EntityType>
-  <EntityType Name="aspnet_Paths">
-    <Key>
-      <PropertyRef Name="PathId" />
-    </Key>
-    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
-    <Property Name="PathId" Type="Guid" Nullable="false" />
-    <Property Name="Path" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="LoweredPath" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="aspnet_Applications" Relationship="Self.FK__aspnet_Pa__Appli__5AEE82B9" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
-    <NavigationProperty Name="aspnet_PersonalizationAllUsers" Relationship="Self.FK__aspnet_Pe__PathI__628FA481" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
-    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="Self.FK__aspnet_Pe__PathI__68487DD7" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
-  </EntityType>
-  <EntityType Name="aspnet_PersonalizationAllUsers">
-    <Key>
-      <PropertyRef Name="PathId" />
-    </Key>
-    <Property Name="PathId" Type="Guid" Nullable="false" />
-    <Property Name="PageSettings" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="aspnet_Paths" Relationship="Self.FK__aspnet_Pe__PathI__628FA481" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
-  </EntityType>
-  <EntityType Name="aspnet_PersonalizationPerUser">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Guid" Nullable="false" />
-    <Property Name="PathId" Type="Guid" />
-    <Property Name="UserId" Type="Guid" />
-    <Property Name="PageSettings" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="aspnet_Paths" Relationship="Self.FK__aspnet_Pe__PathI__68487DD7" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
-    <NavigationProperty Name="aspnet_Users" Relationship="Self.FK__aspnet_Pe__UserI__693CA210" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
-  </EntityType>
-  <EntityType Name="aspnet_Profile">
-    <Key>
-      <PropertyRef Name="UserId" />
-    </Key>
-    <Property Name="UserId" Type="Guid" Nullable="false" />
-    <Property Name="PropertyNames" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="PropertyValuesString" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="PropertyValuesBinary" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="aspnet_Users" Relationship="Self.FK__aspnet_Pr__UserI__38996AB5" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
-  </EntityType>
-  <EntityType Name="aspnet_Roles">
-    <Key>
-      <PropertyRef Name="RoleId" />
-    </Key>
-    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
-    <Property Name="RoleId" Type="Guid" Nullable="false" />
-    <Property Name="RoleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="LoweredRoleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="aspnet_Applications" Relationship="Self.FK__aspnet_Ro__Appli__440B1D61" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
-    <NavigationProperty Name="aspnet_Users" Relationship="Self.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
-  </EntityType>
-  <EntityType Name="aspnet_SchemaVersions">
-    <Key>
-      <PropertyRef Name="Feature" />
-      <PropertyRef Name="CompatibleSchemaVersion" />
-    </Key>
-    <Property Name="Feature" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="CompatibleSchemaVersion" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="IsCurrentVersion" Type="Boolean" Nullable="false" />
-  </EntityType>
-  <EntityType Name="aspnet_Users">
-    <Key>
-      <PropertyRef Name="UserId" />
-    </Key>
-    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
-    <Property Name="UserId" Type="Guid" Nullable="false" />
-    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="LoweredUserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
-    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
-    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="aspnet_Applications" Relationship="Self.FK__aspnet_Us__Appli__0DAF0CB0" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
-    <NavigationProperty Name="aspnet_Membership" Relationship="Self.FK__aspnet_Me__UserI__22AA2996" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
-    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="Self.FK__aspnet_Pe__UserI__693CA210" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
-    <NavigationProperty Name="aspnet_Profile" Relationship="Self.FK__aspnet_Pr__UserI__38996AB5" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
-    <NavigationProperty Name="aspnet_Roles" Relationship="Self.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
-  </EntityType>
-  <EntityType Name="aspnet_WebEvent_Events">
-    <Key>
-      <PropertyRef Name="EventId" />
-    </Key>
-    <Property Name="EventId" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="EventTimeUtc" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="EventTime" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="EventType" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="EventSequence" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
-    <Property Name="EventOccurrence" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
-    <Property Name="EventCode" Type="Int32" Nullable="false" />
-    <Property Name="EventDetailCode" Type="Int32" Nullable="false" />
-    <Property Name="Message" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
-    <Property Name="ApplicationPath" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="ApplicationVirtualPath" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="MachineName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="RequestUrl" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
-    <Property Name="ExceptionType" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="UserProfile">
-    <Key>
-      <PropertyRef Name="UserId" />
-    </Key>
-    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserName" Type="String" MaxLength="56" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="webpages_Roles" Relationship="Self.webpages_UsersInRoles" FromRole="UserProfile" ToRole="webpages_Roles" />
-    <NavigationProperty Name="User" Relationship="MyBaseProjModel.FK_Users_UserProfile1" FromRole="UserProfile" ToRole="User" />
-  </EntityType>
-  <EntityType Name="webpages_Membership">
-    <Key>
-      <PropertyRef Name="UserId" />
-    </Key>
-    <Property Name="UserId" Type="Int32" Nullable="false" />
-    <Property Name="CreateDate" Type="DateTime" Precision="3" />
-    <Property Name="ConfirmationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="IsConfirmed" Type="Boolean" />
-    <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
-    <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
-    <Property Name="Password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
-    <Property Name="PasswordSalt" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
-  </EntityType>
-  <EntityType Name="webpages_OAuthMembership">
-    <Key>
-      <PropertyRef Name="Provider" />
-      <PropertyRef Name="ProviderUserId" />
-    </Key>
-    <Property Name="Provider" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ProviderUserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="UserId" Type="Int32" Nullable="false" />
-  </EntityType>
-  <EntityType Name="webpages_Roles">
-    <Key>
-      <PropertyRef Name="RoleId" />
-    </Key>
-    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="RoleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="UserProfiles" Relationship="Self.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="UserProfile" />
-  </EntityType>
-  <EntityType Name="vw_aspnet_Applications">
-    <Key>
-      <PropertyRef Name="ApplicationName" />
-      <PropertyRef Name="LoweredApplicationName" />
-      <PropertyRef Name="ApplicationId" />
-    </Key>
-    <Property Name="ApplicationName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="LoweredApplicationName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
-    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="vw_aspnet_MembershipUsers">
-    <Key>
-      <PropertyRef Name="UserId" />
-      <PropertyRef Name="PasswordFormat" />
-      <PropertyRef Name="IsApproved" />
-      <PropertyRef Name="IsLockedOut" />
-      <PropertyRef Name="CreateDate" />
-      <PropertyRef Name="LastLoginDate" />
-      <PropertyRef Name="LastPasswordChangedDate" />
-      <PropertyRef Name="LastLockoutDate" />
-      <PropertyRef Name="FailedPasswordAttemptCount" />
-      <PropertyRef Name="FailedPasswordAttemptWindowStart" />
-      <PropertyRef Name="FailedPasswordAnswerAttemptCount" />
-      <PropertyRef Name="FailedPasswordAnswerAttemptWindowStart" />
-      <PropertyRef Name="ApplicationId" />
-      <PropertyRef Name="UserName" />
-      <PropertyRef Name="IsAnonymous" />
-      <PropertyRef Name="LastActivityDate" />
-    </Key>
-    <Property Name="UserId" Type="Guid" Nullable="false" />
-    <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
-    <Property Name="MobilePIN" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="LoweredEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="PasswordQuestion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="PasswordAnswer" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
-    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
-    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
-    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
-    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
-    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
-    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
-    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="vw_aspnet_Profiles">
-    <Key>
-      <PropertyRef Name="UserId" />
-      <PropertyRef Name="LastUpdatedDate" />
-    </Key>
-    <Property Name="UserId" Type="Guid" Nullable="false" />
-    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="DataSize" Type="Int32" />
-  </EntityType>
-  <EntityType Name="vw_aspnet_Roles">
-    <Key>
-      <PropertyRef Name="ApplicationId" />
-      <PropertyRef Name="RoleId" />
-      <PropertyRef Name="RoleName" />
-      <PropertyRef Name="LoweredRoleName" />
-    </Key>
-    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
-    <Property Name="RoleId" Type="Guid" Nullable="false" />
-    <Property Name="RoleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="LoweredRoleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="vw_aspnet_Users">
-    <Key>
-      <PropertyRef Name="ApplicationId" />
-      <PropertyRef Name="UserId" />
-      <PropertyRef Name="UserName" />
-      <PropertyRef Name="LoweredUserName" />
-      <PropertyRef Name="IsAnonymous" />
-      <PropertyRef Name="LastActivityDate" />
-    </Key>
-    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
-    <Property Name="UserId" Type="Guid" Nullable="false" />
-    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="LoweredUserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
-    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
-    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="vw_aspnet_UsersInRoles">
-    <Key>
-      <PropertyRef Name="UserId" />
-      <PropertyRef Name="RoleId" />
-    </Key>
-    <Property Name="UserId" Type="Guid" Nullable="false" />
-    <Property Name="RoleId" Type="Guid" Nullable="false" />
-  </EntityType>
-  <EntityType Name="vw_aspnet_WebPartState_Paths">
-    <Key>
-      <PropertyRef Name="ApplicationId" />
-      <PropertyRef Name="PathId" />
-      <PropertyRef Name="Path" />
-      <PropertyRef Name="LoweredPath" />
-    </Key>
-    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
-    <Property Name="PathId" Type="Guid" Nullable="false" />
-    <Property Name="Path" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="LoweredPath" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-  </EntityType>
-  <EntityType Name="vw_aspnet_WebPartState_Shared">
-    <Key>
-      <PropertyRef Name="PathId" />
-      <PropertyRef Name="LastUpdatedDate" />
-    </Key>
-    <Property Name="PathId" Type="Guid" Nullable="false" />
-    <Property Name="DataSize" Type="Int32" />
-    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="vw_aspnet_WebPartState_User">
-    <Key>
-      <PropertyRef Name="LastUpdatedDate" />
-    </Key>
-    <Property Name="PathId" Type="Guid" />
-    <Property Name="UserId" Type="Guid" />
-    <Property Name="DataSize" Type="Int32" />
-    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <Association Name="FK__aspnet_Me__Appli__21B6055D">
-    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
-    <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Applications">
-        <PropertyRef Name="ApplicationId" />
-      </Principal>
-      <Dependent Role="aspnet_Membership">
-        <PropertyRef Name="ApplicationId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Pa__Appli__5AEE82B9">
-    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
-    <End Role="aspnet_Paths" Type="Self.aspnet_Paths" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Applications">
-        <PropertyRef Name="ApplicationId" />
-      </Principal>
-      <Dependent Role="aspnet_Paths">
-        <PropertyRef Name="ApplicationId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Ro__Appli__440B1D61">
-    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
-    <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Applications">
-        <PropertyRef Name="ApplicationId" />
-      </Principal>
-      <Dependent Role="aspnet_Roles">
-        <PropertyRef Name="ApplicationId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Us__Appli__0DAF0CB0">
-    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
-    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Applications">
-        <PropertyRef Name="ApplicationId" />
-      </Principal>
-      <Dependent Role="aspnet_Users">
-        <PropertyRef Name="ApplicationId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Me__UserI__22AA2996">
-    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
-    <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Users">
-        <PropertyRef Name="UserId" />
-      </Principal>
-      <Dependent Role="aspnet_Membership">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Pe__PathI__628FA481">
-    <End Role="aspnet_Paths" Type="Self.aspnet_Paths" Multiplicity="1" />
-    <End Role="aspnet_PersonalizationAllUsers" Type="Self.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Paths">
-        <PropertyRef Name="PathId" />
-      </Principal>
-      <Dependent Role="aspnet_PersonalizationAllUsers">
-        <PropertyRef Name="PathId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Pe__PathI__68487DD7">
-    <End Role="aspnet_Paths" Type="Self.aspnet_Paths" Multiplicity="0..1" />
-    <End Role="aspnet_PersonalizationPerUser" Type="Self.aspnet_PersonalizationPerUser" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Paths">
-        <PropertyRef Name="PathId" />
-      </Principal>
-      <Dependent Role="aspnet_PersonalizationPerUser">
-        <PropertyRef Name="PathId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Pe__UserI__693CA210">
-    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="0..1" />
-    <End Role="aspnet_PersonalizationPerUser" Type="Self.aspnet_PersonalizationPerUser" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Users">
-        <PropertyRef Name="UserId" />
-      </Principal>
-      <Dependent Role="aspnet_PersonalizationPerUser">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Pr__UserI__38996AB5">
-    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
-    <End Role="aspnet_Profile" Type="Self.aspnet_Profile" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Users">
-        <PropertyRef Name="UserId" />
-      </Principal>
-      <Dependent Role="aspnet_Profile">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="aspnet_UsersInRoles">
-    <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="*" />
-    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="*" />
-  </Association>
-  <Association Name="webpages_UsersInRoles">
-    <End Role="webpages_Roles" Type="Self.webpages_Roles" Multiplicity="*" />
-    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="*" />
-  </Association>
   <EntityContainer Name="MyBaseProjEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="aspnet_Applications" EntityType="Self.aspnet_Applications" />
-    <EntitySet Name="aspnet_Membership" EntityType="Self.aspnet_Membership" />
-    <EntitySet Name="aspnet_Paths" EntityType="Self.aspnet_Paths" />
-    <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="Self.aspnet_PersonalizationAllUsers" />
-    <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="Self.aspnet_PersonalizationPerUser" />
-    <EntitySet Name="aspnet_Profile" EntityType="Self.aspnet_Profile" />
-    <EntitySet Name="aspnet_Roles" EntityType="Self.aspnet_Roles" />
-    <EntitySet Name="aspnet_SchemaVersions" EntityType="Self.aspnet_SchemaVersions" />
-    <EntitySet Name="aspnet_Users" EntityType="Self.aspnet_Users" />
-    <EntitySet Name="aspnet_WebEvent_Events" EntityType="Self.aspnet_WebEvent_Events" />
-    <EntitySet Name="UserProfiles" EntityType="Self.UserProfile" />
-    <EntitySet Name="webpages_Membership" EntityType="Self.webpages_Membership" />
-    <EntitySet Name="webpages_OAuthMembership" EntityType="Self.webpages_OAuthMembership" />
-    <EntitySet Name="webpages_Roles" EntityType="Self.webpages_Roles" />
-    <EntitySet Name="vw_aspnet_Applications" EntityType="Self.vw_aspnet_Applications" />
-    <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="Self.vw_aspnet_MembershipUsers" />
-    <EntitySet Name="vw_aspnet_Profiles" EntityType="Self.vw_aspnet_Profiles" />
-    <EntitySet Name="vw_aspnet_Roles" EntityType="Self.vw_aspnet_Roles" />
-    <EntitySet Name="vw_aspnet_Users" EntityType="Self.vw_aspnet_Users" />
-    <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="Self.vw_aspnet_UsersInRoles" />
-    <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="Self.vw_aspnet_WebPartState_Paths" />
-    <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="Self.vw_aspnet_WebPartState_Shared" />
-    <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="Self.vw_aspnet_WebPartState_User" />
-    <AssociationSet Name="FK__aspnet_Me__Appli__21B6055D" Association="Self.FK__aspnet_Me__Appli__21B6055D">
-      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
-      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pa__Appli__5AEE82B9" Association="Self.FK__aspnet_Pa__Appli__5AEE82B9">
-      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
-      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Ro__Appli__440B1D61" Association="Self.FK__aspnet_Ro__Appli__440B1D61">
-      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
-      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Us__Appli__0DAF0CB0" Association="Self.FK__aspnet_Us__Appli__0DAF0CB0">
-      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
-      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Me__UserI__22AA2996" Association="Self.FK__aspnet_Me__UserI__22AA2996">
-      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
-      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pe__PathI__628FA481" Association="Self.FK__aspnet_Pe__PathI__628FA481">
-      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
-      <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pe__PathI__68487DD7" Association="Self.FK__aspnet_Pe__PathI__68487DD7">
-      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
-      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pe__UserI__693CA210" Association="Self.FK__aspnet_Pe__UserI__693CA210">
-      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
-      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pr__UserI__38996AB5" Association="Self.FK__aspnet_Pr__UserI__38996AB5">
-      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
-      <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
-    </AssociationSet>
-    <AssociationSet Name="aspnet_UsersInRoles" Association="Self.aspnet_UsersInRoles">
-      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
-      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
-    </AssociationSet>
-    <AssociationSet Name="webpages_UsersInRoles" Association="Self.webpages_UsersInRoles">
-      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
-      <End Role="UserProfile" EntitySet="UserProfiles" />
-    </AssociationSet>
     <FunctionImport Name="aspnet_AnyDataInTables" ReturnType="Collection(String)">
       <Parameter Name="TablesToCheck" Mode="In" Type="Int32" />
     </FunctionImport>
@@ -831,10 +332,88 @@
       <Parameter Name="ExceptionType" Mode="In" Type="String" />
       <Parameter Name="Details" Mode="In" Type="String" />
     </FunctionImport>
+    <EntitySet Name="aspnet_Applications" EntityType="MyBaseProjModel.aspnet_Applications" />
+    <EntitySet Name="aspnet_Membership" EntityType="MyBaseProjModel.aspnet_Membership" />
+    <EntitySet Name="aspnet_Paths" EntityType="MyBaseProjModel.aspnet_Paths" />
+    <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="MyBaseProjModel.aspnet_PersonalizationAllUsers" />
+    <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="MyBaseProjModel.aspnet_PersonalizationPerUser" />
+    <EntitySet Name="aspnet_Profile" EntityType="MyBaseProjModel.aspnet_Profile" />
+    <EntitySet Name="aspnet_Roles" EntityType="MyBaseProjModel.aspnet_Roles" />
+    <EntitySet Name="aspnet_SchemaVersions" EntityType="MyBaseProjModel.aspnet_SchemaVersions" />
+    <EntitySet Name="aspnet_Users" EntityType="MyBaseProjModel.aspnet_Users" />
+    <EntitySet Name="aspnet_WebEvent_Events" EntityType="MyBaseProjModel.aspnet_WebEvent_Events" />
+    <EntitySet Name="ThreadPosts" EntityType="MyBaseProjModel.ThreadPost" />
+    <EntitySet Name="Threads" EntityType="MyBaseProjModel.Thread" />
+    <EntitySet Name="webpages_Membership" EntityType="MyBaseProjModel.webpages_Membership" />
+    <EntitySet Name="webpages_OAuthMembership" EntityType="MyBaseProjModel.webpages_OAuthMembership" />
+    <EntitySet Name="webpages_Roles" EntityType="MyBaseProjModel.webpages_Roles" />
+    <EntitySet Name="vw_aspnet_Applications" EntityType="MyBaseProjModel.vw_aspnet_Applications" />
+    <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="MyBaseProjModel.vw_aspnet_MembershipUsers" />
+    <EntitySet Name="vw_aspnet_Profiles" EntityType="MyBaseProjModel.vw_aspnet_Profiles" />
+    <EntitySet Name="vw_aspnet_Roles" EntityType="MyBaseProjModel.vw_aspnet_Roles" />
+    <EntitySet Name="vw_aspnet_Users" EntityType="MyBaseProjModel.vw_aspnet_Users" />
+    <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="MyBaseProjModel.vw_aspnet_UsersInRoles" />
+    <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="MyBaseProjModel.vw_aspnet_WebPartState_Paths" />
+    <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="MyBaseProjModel.vw_aspnet_WebPartState_Shared" />
+    <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="MyBaseProjModel.vw_aspnet_WebPartState_User" />
+    <AssociationSet Name="FK__aspnet_Me__Appli__59063A47" Association="MyBaseProjModel.FK__aspnet_Me__Appli__59063A47">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pa__Appli__5AEE82B9" Association="MyBaseProjModel.FK__aspnet_Pa__Appli__5AEE82B9">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Ro__Appli__5FB337D6" Association="MyBaseProjModel.FK__aspnet_Ro__Appli__5FB337D6">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__Appli__60A75C0F" Association="MyBaseProjModel.FK__aspnet_Us__Appli__60A75C0F">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__59FA5E80" Association="MyBaseProjModel.FK__aspnet_Me__UserI__59FA5E80">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__5BE2A6F2" Association="MyBaseProjModel.FK__aspnet_Pe__PathI__5BE2A6F2">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__5CD6CB2B" Association="MyBaseProjModel.FK__aspnet_Pe__PathI__5CD6CB2B">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__UserI__5DCAEF64" Association="MyBaseProjModel.FK__aspnet_Pe__UserI__5DCAEF64">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pr__UserI__5EBF139D" Association="MyBaseProjModel.FK__aspnet_Pr__UserI__5EBF139D">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ThreadPosts_Threads" Association="MyBaseProjModel.FK_ThreadPosts_Threads">
+      <End Role="Thread" EntitySet="Threads" />
+      <End Role="ThreadPost" EntitySet="ThreadPosts" />
+    </AssociationSet>
+    <AssociationSet Name="aspnet_UsersInRoles" Association="MyBaseProjModel.aspnet_UsersInRoles">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <EntitySet Name="Posts" EntityType="MyBaseProjModel.Post" />
+    <AssociationSet Name="FK_ThreadPosts_Posts" Association="MyBaseProjModel.FK_ThreadPosts_Posts">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="ThreadPost" EntitySet="ThreadPosts" />
+    </AssociationSet>
+    <EntitySet Name="UserProfiles" EntityType="MyBaseProjModel.UserProfile" />
     <EntitySet Name="Users" EntityType="MyBaseProjModel.User" />
-    <AssociationSet Name="FK_Users_UserProfile1" Association="MyBaseProjModel.FK_Users_UserProfile1">
+    <AssociationSet Name="FK_Users_UserProfile" Association="MyBaseProjModel.FK_Users_UserProfile">
       <End Role="UserProfile" EntitySet="UserProfiles" />
       <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="webpages_UsersInRoles" Association="MyBaseProjModel.webpages_UsersInRoles">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="UserProfile" EntitySet="UserProfiles" />
     </AssociationSet>
   </EntityContainer>
   <ComplexType Name="aspnet_Membership_GetPassword_Result">
@@ -886,6 +465,494 @@
     <Property Type="String" Name="Column1" Nullable="false" MaxLength="1" />
     <Property Type="String" Name="Name" Nullable="false" MaxLength="256" />
   </ComplexType>
+  <EntityType Name="aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredApplicationName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="MyBaseProjModel.FK__aspnet_Me__Appli__59063A47" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="MyBaseProjModel.FK__aspnet_Pa__Appli__5AEE82B9" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Roles" Relationship="MyBaseProjModel.FK__aspnet_Ro__Appli__5FB337D6" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Users" Relationship="MyBaseProjModel.FK__aspnet_Us__Appli__60A75C0F" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="MobilePIN" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="MyBaseProjModel.FK__aspnet_Me__Appli__59063A47" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Users" Relationship="MyBaseProjModel.FK__aspnet_Me__UserI__59FA5E80" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Paths">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="Path" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredPath" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="MyBaseProjModel.FK__aspnet_Pa__Appli__5AEE82B9" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_PersonalizationAllUsers" Relationship="MyBaseProjModel.FK__aspnet_Pe__PathI__5BE2A6F2" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="MyBaseProjModel.FK__aspnet_Pe__PathI__5CD6CB2B" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationAllUsers">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="PageSettings" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="MyBaseProjModel.FK__aspnet_Pe__PathI__5BE2A6F2" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationPerUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="PathId" Type="Guid" />
+    <Property Name="UserId" Type="Guid" />
+    <Property Name="PageSettings" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="MyBaseProjModel.FK__aspnet_Pe__PathI__5CD6CB2B" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Users" Relationship="MyBaseProjModel.FK__aspnet_Pe__UserI__5DCAEF64" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Profile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="PropertyNames" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PropertyValuesString" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PropertyValuesBinary" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="aspnet_Users" Relationship="MyBaseProjModel.FK__aspnet_Pr__UserI__5EBF139D" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="MyBaseProjModel.FK__aspnet_Ro__Appli__5FB337D6" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Users" Relationship="MyBaseProjModel.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_SchemaVersions">
+    <Key>
+      <PropertyRef Name="Feature" />
+      <PropertyRef Name="CompatibleSchemaVersion" />
+    </Key>
+    <Property Name="Feature" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="CompatibleSchemaVersion" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsCurrentVersion" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredUserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="MyBaseProjModel.FK__aspnet_Us__Appli__60A75C0F" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="MyBaseProjModel.FK__aspnet_Me__UserI__59FA5E80" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="MyBaseProjModel.FK__aspnet_Pe__UserI__5DCAEF64" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
+    <NavigationProperty Name="aspnet_Profile" Relationship="MyBaseProjModel.FK__aspnet_Pr__UserI__5EBF139D" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
+    <NavigationProperty Name="aspnet_Roles" Relationship="MyBaseProjModel.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
+  </EntityType>
+  <EntityType Name="aspnet_WebEvent_Events">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="EventTimeUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EventTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EventType" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EventSequence" Type="Decimal" Nullable="false" Precision="19" Scale="0" />
+    <Property Name="EventOccurrence" Type="Decimal" Nullable="false" Precision="19" Scale="0" />
+    <Property Name="EventCode" Type="Int32" Nullable="false" />
+    <Property Name="EventDetailCode" Type="Int32" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationPath" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationVirtualPath" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="MachineName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="RequestUrl" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="ExceptionType" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ThreadPost">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ThreadId" Type="Int32" Nullable="false" />
+    <Property Name="PostId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Thread" Relationship="MyBaseProjModel.FK_ThreadPosts_Threads" FromRole="ThreadPost" ToRole="Thread" />
+    <NavigationProperty Name="Post" Relationship="MyBaseProjModel.FK_ThreadPosts_Posts" FromRole="ThreadPost" ToRole="Post" />
+  </EntityType>
+  <EntityType Name="Thread">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Header" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FirstPostId" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ThreadPosts" Relationship="MyBaseProjModel.FK_ThreadPosts_Threads" FromRole="Thread" ToRole="ThreadPost" />
+  </EntityType>
+  <EntityType Name="webpages_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ConfirmationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsConfirmed" Type="Boolean" />
+    <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="webpages_OAuthMembership">
+    <Key>
+      <PropertyRef Name="Provider" />
+      <PropertyRef Name="ProviderUserId" />
+    </Key>
+    <Property Name="Provider" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderUserId" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserProfiles" Relationship="MyBaseProjModel.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationName" />
+      <PropertyRef Name="LoweredApplicationName" />
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredApplicationName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_MembershipUsers">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="PasswordFormat" />
+      <PropertyRef Name="IsApproved" />
+      <PropertyRef Name="IsLockedOut" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="LastLoginDate" />
+      <PropertyRef Name="LastPasswordChangedDate" />
+      <PropertyRef Name="LastLockoutDate" />
+      <PropertyRef Name="FailedPasswordAttemptCount" />
+      <PropertyRef Name="FailedPasswordAttemptWindowStart" />
+      <PropertyRef Name="FailedPasswordAnswerAttemptCount" />
+      <PropertyRef Name="FailedPasswordAnswerAttemptWindowStart" />
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="IsAnonymous" />
+      <PropertyRef Name="LastActivityDate" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+    <Property Name="MobilePIN" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_Profiles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataSize" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_Roles">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="RoleId" />
+      <PropertyRef Name="RoleName" />
+      <PropertyRef Name="LoweredRoleName" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_Users">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="LoweredUserName" />
+      <PropertyRef Name="IsAnonymous" />
+      <PropertyRef Name="LastActivityDate" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredUserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_WebPartState_Paths">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="PathId" />
+      <PropertyRef Name="Path" />
+      <PropertyRef Name="LoweredPath" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="Path" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredPath" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_WebPartState_Shared">
+    <Key>
+      <PropertyRef Name="PathId" />
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="DataSize" Type="Int32" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_WebPartState_User">
+    <Key>
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="PathId" Type="Guid" />
+    <Property Name="UserId" Type="Guid" />
+    <Property Name="DataSize" Type="Int32" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK__aspnet_Me__Appli__59063A47">
+    <End Type="MyBaseProjModel.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+    <End Type="MyBaseProjModel.aspnet_Membership" Role="aspnet_Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pa__Appli__5AEE82B9">
+    <End Type="MyBaseProjModel.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+    <End Type="MyBaseProjModel.aspnet_Paths" Role="aspnet_Paths" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Paths">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Ro__Appli__5FB337D6">
+    <End Type="MyBaseProjModel.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+    <End Type="MyBaseProjModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__Appli__60A75C0F">
+    <End Type="MyBaseProjModel.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+    <End Type="MyBaseProjModel.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__59FA5E80">
+    <End Type="MyBaseProjModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+    <End Type="MyBaseProjModel.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__5BE2A6F2">
+    <End Type="MyBaseProjModel.aspnet_Paths" Role="aspnet_Paths" Multiplicity="1" />
+    <End Type="MyBaseProjModel.aspnet_PersonalizationAllUsers" Role="aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationAllUsers">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__5CD6CB2B">
+    <End Type="MyBaseProjModel.aspnet_Paths" Role="aspnet_Paths" Multiplicity="0..1" />
+    <End Type="MyBaseProjModel.aspnet_PersonalizationPerUser" Role="aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__UserI__5DCAEF64">
+    <End Type="MyBaseProjModel.aspnet_Users" Role="aspnet_Users" Multiplicity="0..1" />
+    <End Type="MyBaseProjModel.aspnet_PersonalizationPerUser" Role="aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pr__UserI__5EBF139D">
+    <End Type="MyBaseProjModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+    <End Type="MyBaseProjModel.aspnet_Profile" Role="aspnet_Profile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ThreadPosts_Threads">
+    <End Type="MyBaseProjModel.Thread" Role="Thread" Multiplicity="1" />
+    <End Type="MyBaseProjModel.ThreadPost" Role="ThreadPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Thread">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ThreadPost">
+        <PropertyRef Name="ThreadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="aspnet_UsersInRoles">
+    <End Type="MyBaseProjModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
+    <End Type="MyBaseProjModel.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Header" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="MetaTags" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="ThreadPosts" Relationship="MyBaseProjModel.FK_ThreadPosts_Posts" FromRole="Post" ToRole="ThreadPost" />
+  </EntityType>
+  <Association Name="FK_ThreadPosts_Posts">
+    <End Type="MyBaseProjModel.Post" Role="Post" Multiplicity="1" />
+    <End Type="MyBaseProjModel.ThreadPost" Role="ThreadPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ThreadPost">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="56" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="MyBaseProjModel.FK_Users_UserProfile" FromRole="UserProfile" ToRole="User" />
+    <NavigationProperty Name="webpages_Roles" Relationship="MyBaseProjModel.webpages_UsersInRoles" FromRole="UserProfile" ToRole="webpages_Roles" />
+  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="ID" />
@@ -899,9 +966,9 @@
     <Property Name="Mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
     <Property Name="CreatedBy" Type="Int32" />
     <Property Name="CreatedOn" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="UserProfile" Relationship="MyBaseProjModel.FK_Users_UserProfile1" FromRole="User" ToRole="UserProfile" />
+    <NavigationProperty Name="UserProfile" Relationship="MyBaseProjModel.FK_Users_UserProfile" FromRole="User" ToRole="UserProfile" />
   </EntityType>
-  <Association Name="FK_Users_UserProfile1">
+  <Association Name="FK_Users_UserProfile">
     <End Type="MyBaseProjModel.UserProfile" Role="UserProfile" Multiplicity="1" />
     <End Type="MyBaseProjModel.User" Role="User" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -912,5 +979,9 @@
         <PropertyRef Name="ID" />
       </Dependent>
     </ReferentialConstraint>
+  </Association>
+  <Association Name="webpages_UsersInRoles">
+    <End Type="MyBaseProjModel.webpages_Roles" Role="webpages_Roles" Multiplicity="*" />
+    <End Type="MyBaseProjModel.UserProfile" Role="UserProfile" Multiplicity="*" />
   </Association>
 </Schema>

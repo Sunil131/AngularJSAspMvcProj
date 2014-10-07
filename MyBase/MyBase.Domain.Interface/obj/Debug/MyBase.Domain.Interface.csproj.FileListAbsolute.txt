@@ -14,3 +14,11 @@ E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Domain.Interface\bin\Debug
 E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Domain.Interface\obj\Debug\MyBase.Domain.Interface.csprojResolveAssemblyReference.cache
 E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Domain.Interface\obj\Debug\MyBase.Domain.Interface.dll
 E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Domain.Interface\obj\Debug\MyBase.Domain.Interface.pdb
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Interface\bin\Debug\MyBase.Domain.Interface.dll.config
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Interface\bin\Debug\MyBase.Domain.Interface.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Interface\bin\Debug\MyBase.Domain.Interface.pdb
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Interface\bin\Debug\MyBase.Domain.Core.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Interface\bin\Debug\MyBase.Domain.Core.pdb
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Interface\obj\Debug\MyBase.Domain.Interface.csprojResolveAssemblyReference.cache
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Interface\obj\Debug\MyBase.Domain.Interface.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Domain.Interface\obj\Debug\MyBase.Domain.Interface.pdb

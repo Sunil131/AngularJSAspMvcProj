@@ -8,3 +8,12 @@ E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBaseProjDB\bin\Debug\MyBaseProj
 E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBaseProjDB\bin\Debug\MyBaseProjDB.pdb
 E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBaseProjDB\obj\Debug\MyBaseProjDB.dll
 E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBaseProjDB\obj\Debug\MyBaseProjDB.pdb
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBaseProjDB\bin\Debug\MyBaseProjDB.dacpac
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBaseProjDB\bin\Debug\MyBaseProjDB.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBaseProjDB\bin\Debug\MyBaseProjDB.pdb
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBaseProjDB\obj\Debug\MyBaseProjDB.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBaseProjDB\obj\Debug\MyBaseProjDB.pdb
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBaseProjDB\obj\Debug\Model.xml
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBaseProjDB\obj\Debug\refactor.xml
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBaseProjDB\obj\Debug\postdeploy.sql
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBaseProjDB\obj\Debug\predeploy.sql

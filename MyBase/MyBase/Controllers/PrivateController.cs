@@ -34,15 +34,15 @@ namespace MyBase.Controllers
             var userDetailModel = _UserMetaService.FindUserDetailsByUserId(UserName);
             UserDetailsModel model = new UserDetailsModel()
             {
-                First = userDetailModel.User.First,
-                Last = userDetailModel.User.Last,
-                Middle = userDetailModel.User.Middle,
-                Mobile = userDetailModel.User.Mobile,
-                Phone = userDetailModel.User.Phone,
+                First = (userDetailModel.User!=null)?userDetailModel.User.First:String.Empty,
+                Last = (userDetailModel.User!=null)?userDetailModel.User.Last:String.Empty,
+                Middle = (userDetailModel.User!=null)?userDetailModel.User.Middle:String.Empty,
+                Mobile = (userDetailModel.User!=null)?userDetailModel.User.Mobile:String.Empty,
+                Phone = (userDetailModel.User!=null)?userDetailModel.User.Phone:String.Empty,
                 ID = userDetailModel.UserId,
                 UserId = userDetailModel.UserId,
                 UserName = userDetailModel.UserName,
-                DateOfBirth = userDetailModel.User.DateofBirth
+                DateOfBirth = (userDetailModel.User!=null)?userDetailModel.User.DateofBirth:DateTime.Now
             };
 
             return View(model);
@@ -64,15 +64,15 @@ namespace MyBase.Controllers
             var userDetailModel = _UserMetaService.FindUserDetailsByUserId(UserName);
             UserDetailsModel model = new UserDetailsModel()
             {
-                First = userDetailModel.User.First,
-                Last = userDetailModel.User.Last,
-                Middle = userDetailModel.User.Middle,
-                Mobile = userDetailModel.User.Mobile,
-                Phone = userDetailModel.User.Phone,
+                First = (userDetailModel.User != null) ? userDetailModel.User.First : String.Empty,
+                Last = (userDetailModel.User != null) ? userDetailModel.User.Last : String.Empty,
+                Middle = (userDetailModel.User != null) ? userDetailModel.User.Middle : String.Empty,
+                Mobile = (userDetailModel.User != null) ? userDetailModel.User.Mobile : String.Empty,
+                Phone = (userDetailModel.User != null) ? userDetailModel.User.Phone : String.Empty,
                 ID = userDetailModel.UserId,
                 UserId = userDetailModel.UserId,
                 UserName = userDetailModel.UserName,
-                DateOfBirth = userDetailModel.User.DateofBirth
+                DateOfBirth = (userDetailModel.User != null) ? userDetailModel.User.DateofBirth : DateTime.Now
             };
 
             return View(model);

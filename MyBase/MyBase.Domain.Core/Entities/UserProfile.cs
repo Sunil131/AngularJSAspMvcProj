@@ -22,7 +22,7 @@ namespace MyBase.Domain.Core.Entities
         public int UserId { get; set; }
         public string UserName { get; set; }
     
-        public virtual ICollection<webpages_Roles> webpages_Roles { get; set; }
         public virtual User User { get; set; }
+        public virtual ICollection<webpages_Roles> webpages_Roles { get; set; }
     }
 }

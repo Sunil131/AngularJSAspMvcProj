@@ -5,50 +5,47 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="023902e1096f4ae48eb54d53adbd6795" Name="Diagram1">
-        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_Applications" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_Membership" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_Paths" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_PersonalizationAllUsers" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_PersonalizationPerUser" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_Profile" Width="1.5" PointX="10.5" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_Roles" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_SchemaVersions" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_Users" Width="1.5" PointX="8.25" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_WebEvent_Events" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.UserProfile" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.webpages_Membership" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.webpages_OAuthMembership" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.webpages_Roles" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_Applications" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_MembershipUsers" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_Profiles" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_Roles" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_Users" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_UsersInRoles" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_WebPartState_Paths" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_WebPartState_User" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Me__Appli__21B6055D" ManuallyRouted="false" />
-        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Pa__Appli__5AEE82B9" ManuallyRouted="false" />
-        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Ro__Appli__440B1D61" ManuallyRouted="false" />
-        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Us__Appli__0DAF0CB0" ManuallyRouted="false" />
-        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Me__UserI__22AA2996" ManuallyRouted="false" />
-        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Pe__PathI__628FA481" ManuallyRouted="false" />
-        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Pe__PathI__68487DD7" ManuallyRouted="false" />
-        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Pe__UserI__693CA210" ManuallyRouted="false" />
-        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Pr__UserI__38996AB5" ManuallyRouted="false" />
-        <AssociationConnector Association="MyBaseProjModel.aspnet_UsersInRoles" ManuallyRouted="false" />
-        <AssociationConnector Association="MyBaseProjModel.webpages_UsersInRoles" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="MyBaseProjModel.User" Width="1.5" PointX="5.25" PointY="0.75" />
-        <AssociationConnector Association="MyBaseProjModel.FK_Users_UserProfile1" />
-        <EntityTypeShape EntityType="MyBaseProjModel.Post" Width="1.5" PointX="13.375" PointY="14" />
-        <EntityTypeShape EntityType="MyBaseProjModel.ThreadPost" Width="1.5" PointX="15.625" PointY="14.5" />
-        <EntityTypeShape EntityType="MyBaseProjModel.Thread" Width="1.5" PointX="13.375" PointY="18.125" />
-        <AssociationConnector Association="MyBaseProjModel.FK_Posts_Posts" />
-        <AssociationConnector Association="MyBaseProjModel.FK_ThreadPosts_Posts" />
+        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_Applications" Width="1.5" PointX="0.75" PointY="7.875" />
+        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_Membership" Width="1.5" PointX="3" PointY="6.5" />
+        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_Paths" Width="1.5" PointX="3" PointY="12.625" />
+        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_PersonalizationAllUsers" Width="1.5" PointX="5.25" PointY="16" />
+        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_PersonalizationPerUser" Width="1.5" PointX="5.25" PointY="12.625" />
+        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_Profile" Width="1.5" PointX="7.5" PointY="8.875" />
+        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_Roles" Width="1.5" PointX="3" PointY="15.75" />
+        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_SchemaVersions" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_Users" Width="1.5" PointX="5.25" PointY="8.375" />
+        <EntityTypeShape EntityType="MyBaseProjModel.aspnet_WebEvent_Events" Width="1.5" PointX="9.75" PointY="4.75" />
+        <EntityTypeShape EntityType="MyBaseProjModel.ThreadPost" Width="1.5" PointX="3" PointY="1.5" />
+        <EntityTypeShape EntityType="MyBaseProjModel.Thread" Width="1.5" PointX="0.75" PointY="12.125" />
+        <EntityTypeShape EntityType="MyBaseProjModel.webpages_Membership" Width="1.5" PointX="9.75" PointY="9.75" />
+        <EntityTypeShape EntityType="MyBaseProjModel.webpages_OAuthMembership" Width="1.5" PointX="11.75" PointY="4.75" />
+        <EntityTypeShape EntityType="MyBaseProjModel.webpages_Roles" Width="1.5" PointX="5.75" PointY="1.625" />
+        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_Applications" Width="1.5" PointX="11.75" PointY="7.75" />
+        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_MembershipUsers" Width="1.5" PointX="11.75" PointY="10.75" />
+        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_Profiles" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_Roles" Width="1.5" PointX="13.75" PointY="3.75" />
+        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_Users" Width="1.5" PointX="13.75" PointY="6.75" />
+        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_UsersInRoles" Width="1.5" PointX="7.75" PointY="13.75" />
+        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_WebPartState_Paths" Width="1.5" PointX="13.75" PointY="10.75" />
+        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="13.75" PointY="13.75" />
+        <EntityTypeShape EntityType="MyBaseProjModel.vw_aspnet_WebPartState_User" Width="1.5" PointX="14.75" PointY="0.75" />
+        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Me__Appli__59063A47" />
+        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Pa__Appli__5AEE82B9" />
+        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Ro__Appli__5FB337D6" />
+        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Us__Appli__60A75C0F" />
+        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Me__UserI__59FA5E80" />
+        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Pe__PathI__5BE2A6F2" />
+        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Pe__PathI__5CD6CB2B" />
+        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Pe__UserI__5DCAEF64" />
+        <AssociationConnector Association="MyBaseProjModel.FK__aspnet_Pr__UserI__5EBF139D" />
         <AssociationConnector Association="MyBaseProjModel.FK_ThreadPosts_Threads" />
-        <EntityTypeShape EntityType="MyBaseProjModel.PostDetail" Width="1.5" PointX="15.625" PointY="17.625" />
-        <AssociationConnector Association="MyBaseProjModel.FK_PostDetails_Posts1" />
+        <AssociationConnector Association="MyBaseProjModel.aspnet_UsersInRoles" />
+        <EntityTypeShape EntityType="MyBaseProjModel.Post" Width="1.5" PointX="0.75" PointY="1.25" />
+        <AssociationConnector Association="MyBaseProjModel.FK_ThreadPosts_Posts" />
+        <EntityTypeShape EntityType="MyBaseProjModel.UserProfile" Width="1.5" PointX="8" PointY="1.5" />
+        <EntityTypeShape EntityType="MyBaseProjModel.User" Width="1.5" PointX="10.25" PointY="1" />
+        <AssociationConnector Association="MyBaseProjModel.FK_Users_UserProfile" />
+        <AssociationConnector Association="MyBaseProjModel.webpages_UsersInRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

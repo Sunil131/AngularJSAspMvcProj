@@ -18,7 +18,7 @@ namespace MyBase.Domain.Core.Entities
         public int ThreadId { get; set; }
         public int PostId { get; set; }
     
-        public virtual Post Post { get; set; }
         public virtual Thread Thread { get; set; }
+        public virtual Post Post { get; set; }
     }
 }

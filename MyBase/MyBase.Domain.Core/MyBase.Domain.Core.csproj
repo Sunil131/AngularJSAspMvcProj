@@ -103,9 +103,6 @@
     <Compile Include="Entities\Post.cs">
       <DependentUpon>MyBase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\PostDetail.cs">
-      <DependentUpon>MyBase.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entities\Thread.cs">
       <DependentUpon>MyBase.tt</DependentUpon>
     </Compile>

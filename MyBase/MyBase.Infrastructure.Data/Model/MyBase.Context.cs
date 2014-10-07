@@ -14,6 +14,7 @@ namespace MyBase.Infrastructure.Data.Model
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Core.Objects;
     using System.Linq;
+    using MyBase.Domain.Core.Entities;
     
     public partial class MyBaseProjEntities : DbContext
     {
@@ -37,7 +38,8 @@ namespace MyBase.Infrastructure.Data.Model
         public virtual DbSet<aspnet_SchemaVersions> aspnet_SchemaVersions { get; set; }
         public virtual DbSet<aspnet_Users> aspnet_Users { get; set; }
         public virtual DbSet<aspnet_WebEvent_Events> aspnet_WebEvent_Events { get; set; }
-        public virtual DbSet<UserProfile> UserProfiles { get; set; }
+        public virtual DbSet<ThreadPost> ThreadPosts { get; set; }
+        public virtual DbSet<Thread> Threads { get; set; }
         public virtual DbSet<webpages_Membership> webpages_Membership { get; set; }
         public virtual DbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
         public virtual DbSet<webpages_Roles> webpages_Roles { get; set; }
@@ -50,11 +52,9 @@ namespace MyBase.Infrastructure.Data.Model
         public virtual DbSet<vw_aspnet_WebPartState_Paths> vw_aspnet_WebPartState_Paths { get; set; }
         public virtual DbSet<vw_aspnet_WebPartState_Shared> vw_aspnet_WebPartState_Shared { get; set; }
         public virtual DbSet<vw_aspnet_WebPartState_User> vw_aspnet_WebPartState_User { get; set; }
-        public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Post> Posts { get; set; }
-        public virtual DbSet<ThreadPost> ThreadPosts { get; set; }
-        public virtual DbSet<Thread> Threads { get; set; }
-        public virtual DbSet<PostDetail> PostDetails { get; set; }
+        public virtual DbSet<UserProfile> UserProfiles { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     
         public virtual ObjectResult<string> aspnet_AnyDataInTables(Nullable<int> tablesToCheck)
         {

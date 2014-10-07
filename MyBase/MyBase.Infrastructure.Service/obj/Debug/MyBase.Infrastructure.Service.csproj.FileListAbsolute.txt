@@ -30,3 +30,17 @@ E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Infrastructure.Service\obj
 E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Infrastructure.Service\bin\Debug\AutoMapper.Net4.dll
 E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Infrastructure.Service\bin\Debug\AutoMapper.dll
 E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Infrastructure.Service\bin\Debug\AutoMapper.xml
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Service\bin\Debug\AutoMapper.Net4.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Service\bin\Debug\MyProj.Infrastructure.Service.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Service\bin\Debug\MyProj.Infrastructure.Service.pdb
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Service\bin\Debug\AutoMapper.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Service\bin\Debug\MyBase.Domain.Core.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Service\bin\Debug\MyBase.Domain.Interface.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Service\bin\Debug\MyBase.Infrastructure.Core.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Service\bin\Debug\MyBase.Domain.Core.pdb
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Service\bin\Debug\MyBase.Domain.Interface.pdb
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Service\bin\Debug\MyBase.Infrastructure.Core.pdb
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Service\bin\Debug\AutoMapper.xml
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Service\obj\Debug\MyBase.Infrastructure.Service.csprojResolveAssemblyReference.cache
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Service\obj\Debug\MyProj.Infrastructure.Service.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Service\obj\Debug\MyProj.Infrastructure.Service.pdb

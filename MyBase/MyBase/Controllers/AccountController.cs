@@ -355,13 +355,14 @@ namespace MyBase.Controllers
             {
                 var userDetails = _UserMetaService.FindUserDetailsByUserId(UserName);
                 var userProfile = _UserMetaService.FindUserProfileByUserId(UserName);
-                if (userDetails.User.First == string.Empty)
+                if (userDetails.User != null )
                 {
-                    return RedirectToAction("UserDetails", "Private", new {UserName=UserName,UserID=userDetails.UserId });
+                    return RedirectToAction("ShowUserDetails", "Private", new { UserName = UserName, UserID = userDetails.UserId });
                 }
                 else
                 {
-                    return RedirectToAction("ShowUserDetails", "Private", new { UserName = UserName, UserID = userDetails.UserId });
+                    return RedirectToAction("UserDetails", "Private", new { UserName = UserName, UserID = userDetails.UserId });
+                    
                 }
                 
             }
