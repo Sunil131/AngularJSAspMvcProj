@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PresentationModel\ThreadsModel.cs" />
     <Compile Include="PresentationModel\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceInterface\IThreadsService.cs" />
     <Compile Include="ServiceInterface\IUserMetaService.cs" />
     <Compile Include="PresentationModel\UserDetailsModel.cs" />
   </ItemGroup>

@@ -42,6 +42,12 @@ namespace MyBase.Infrastructure.DependencyResolution
     {
         container.RegisterType<IUserRepo, UsersRepo>();
         container.RegisterType<IUserMetaService, UserMetaService>();
+
+        container.RegisterType<IThreadsRepo, ThreadsRepo>();
+        container.RegisterType<IThreadsService, ThreadsService>();
+
+
+
     }
   }
 }

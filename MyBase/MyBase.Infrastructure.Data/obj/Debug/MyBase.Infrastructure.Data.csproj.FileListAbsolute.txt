@@ -26,9 +26,6 @@ E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Infrastructure.Data\bin\De
 E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Infrastructure.Data\obj\Debug\MyBase.Infrastructure.Data.csprojResolveAssemblyReference.cache
 E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Infrastructure.Data\obj\Debug\MyBase.Infrastructure.Data.dll
 E:\Research\GitSource\BaseProj\BaseProj\MyBase\MyBase.Infrastructure.Data\obj\Debug\MyBase.Infrastructure.Data.pdb
-D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Data\obj\Debug\MyBase.Infrastructure.Data.csprojResolveAssemblyReference.cache
-D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Data\obj\Debug\MyBase.Infrastructure.Data.dll
-D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Data\obj\Debug\MyBase.Infrastructure.Data.pdb
 D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Data\bin\Debug\MyBase.Infrastructure.Data.dll.config
 D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Data\bin\Debug\MyBase.Infrastructure.Data.dll
 D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Data\bin\Debug\MyBase.Infrastructure.Data.pdb
@@ -40,3 +37,6 @@ D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.D
 D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Data\bin\Debug\MyBase.Domain.Interface.pdb
 D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Data\bin\Debug\EntityFramework.xml
 D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Data\obj\Debug\MyBase.Infrastructure.Data.csprojResolveAssemblyReference.cache
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Data\obj\Debug\MyBase.Infrastructure.Data.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase.Infrastructure.Data\obj\Debug\MyBase.Infrastructure.Data.pdb
