@@ -15,5 +15,18 @@ namespace MyBase.Infrastructure.Data.Repositories
             var entities = new MyBase.Infrastructure.Data.Model.MyBaseProjEntities();
             return entities.Threads.ToList();
         }
+
+
+        public bool AddNewThread(Thread newThread)
+        {
+            using (var entities = new MyBase.Infrastructure.Data.Model.MyBaseProjEntities())
+            {
+                entities.Threads.Add(newThread);
+                return (entities.SaveChanges() != 0) ? true : false;
+            }
+        }
+
+
+       
     }
 }

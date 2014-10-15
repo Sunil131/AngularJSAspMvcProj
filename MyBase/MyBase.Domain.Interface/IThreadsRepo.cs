@@ -10,5 +10,7 @@ namespace MyBase.Domain.Interface
     public interface IThreadsRepo
     {
         IEnumerable<Thread> GetAllThreads();
+
+        bool AddNewThread(Thread newThread);
     }
 }

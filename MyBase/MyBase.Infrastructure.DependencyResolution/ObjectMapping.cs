@@ -17,6 +17,9 @@ namespace MyBase.Infrastructure.DependencyResolution
             Mapper.CreateMap<User, UserDetailsModel>();
 
             Mapper.CreateMap<UserProfile, UserDetailsModel>();
+
+            Mapper.CreateMap<ThreadDetailModel, Thread>();
+            Mapper.CreateMap<Thread, ThreadDetailModel>();
         }
     }
 }

@@ -31,9 +31,6 @@ namespace MyBase
             MyBase.Infrastructure.DependencyResolution.Bootstrapper.Initialise();
             MyBase.Infrastructure.DependencyResolution.ObjectMapping.CreateMap();
             
-            
-
-
         }
     }
 }

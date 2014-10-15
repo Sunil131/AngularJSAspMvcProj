@@ -35,10 +35,17 @@ namespace MyBase.Controllers
         
         public JsonResult  GetThreads()
         {
-            var threadsmodel = _threadService.GetAllThreads();
+            var ThreadDetailsModel = _threadService.GetAllThreads();
             //thread objThread = new thread();
             //objThread.Header = "Testing";
-            return Json(threadsmodel, JsonRequestBehavior.AllowGet);
+            return Json(ThreadDetailsModel, JsonRequestBehavior.AllowGet);
+        }
+
+
+        public bool AddNewThread(ThreadsModel ThreadData)
+        {
+
+            return true;
         }
 
     }

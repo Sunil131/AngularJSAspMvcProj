@@ -433,4 +433,4 @@ D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase\bin\zh-Hant\Syst
 D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase\obj\Debug\MyBase.csprojResolveAssemblyReference.cache
 D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase\obj\Debug\MyBase.dll
 D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase\obj\Debug\MyBase.pdb
-D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase\bin\AutoMapper.Net4.dll
+D:\MyResearchs\GitSource\AngulaJSASP_MVC_BaseProj\MyBase\MyBase\bin\Microsoft.Web.Mvc.dll

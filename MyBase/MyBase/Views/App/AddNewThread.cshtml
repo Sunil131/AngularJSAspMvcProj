@@ -1,0 +1,48 @@
+﻿<div id="AddNewThread">
+    <div >
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div role="form" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="ThreadName" class="display-label">Thread Name</label>
+                            <input type="text" class="form-control" id="ThreadName" placeholder="Enter Thread Name" data-ng-model="newThread.Header" />{{ThreadName}}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ThreadDescription" class="display-label">A Little Description</label>
+                            <textarea class="form-control" id="Description" rows="3" aria-multiline="true" placeholder="Enter Thread Description" data-ng-model="newThread.Description">{{Description}}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <div>
+                                <input type="button" data-ng-disable="!newThread.Header" data-ng-click="submitThread()" value="Submit" />
+                                @*<input type="submit" value="Submit">Submit</input>*@
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <div style="border-left: inset; border-width: thin; height: 200px; padding-left: inherit">
+
+                        <div class="content-wrapper">
+                            <div class="contact-table table table-curved table-striped" style="background-color: aliceblue !important;">
+                                <hgroup class="hgroup" style="text-decoration: underline;">
+                                    <h2>Threads</h2>
+                                </hgroup>
+
+                                <div data-ng-repeat="thread in threads | filter:newThread.Header">
+                                    <div>
+                                        <p>{{thread.Header}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

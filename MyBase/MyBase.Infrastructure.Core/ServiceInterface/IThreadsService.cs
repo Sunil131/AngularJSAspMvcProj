@@ -10,6 +10,8 @@ namespace MyBase.Infrastructure.Core.ServiceInterface
 {
     public interface IThreadsService
     {
-        ThreadsModel GetAllThreads();
+        IEnumerable<ThreadDetailModel> GetAllThreads();
+
+        bool AddNewThread(ThreadDetailModel newThread);
     }
 }

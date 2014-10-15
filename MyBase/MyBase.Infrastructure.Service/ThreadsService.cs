@@ -19,13 +19,19 @@ namespace MyBase.Infrastructure.Service
             _threadRepo = _ThreadRepo;
         }
 
-        public ThreadsModel GetAllThreads()
+        public IEnumerable<ThreadDetailModel> GetAllThreads()
         {
-            var threadModel = new ThreadsModel()
-            {
-                Threads = _threadRepo.GetAllThreads()
-            };
-            return threadModel;
+            var thread = _threadRepo.GetAllThreads();
+            IEnumerable<ThreadDetailModel> threadDetails=
+                AutoMapper.Mapper.Map <IEnumerable<Thread>, IEnumerable<ThreadDetailModel>>(_threadRepo.GetAllThreads());
+
+            return threadDetails;
+        }
+
+
+        public bool AddNewThread(ThreadDetailModel newThread)
+        {
+            throw new NotImplementedException();
         }
     }
 }

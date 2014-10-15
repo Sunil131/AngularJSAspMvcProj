@@ -1,0 +1,46 @@
+﻿<div id="AddNewPost">
+
+       <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div role="form" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="Header" class="display-label">Post Header</label>
+                            <input type="text" class="form-control" id="ThreadName" placeholder="Enter Thread Name" data-ng-model="newPost.Header" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Description" class="display-label">A Little Description</label>
+                            <textarea class="form-control" id="Description" rows="3" aria-multiline="true" placeholder="Enter Thread Description" data-ng-model="newPost.Description">{{Description}}</textarea>
+                        </div>
+
+                         <div class="form-group">
+                            <label for="MetaData" class="display-label">Metadata Tags</label>
+                            <input type="text" class="form-control" id="Text1" placeholder="Enter Thread Name" data-ng-model="newPost.Metadata" />
+                        </div>
+
+                        <div class="form-group">
+                            <div>
+                                <input type="button" data-ng-disable="!newPost.Header" data-ng-click="submitNewThreadwithPost()" value="Submit" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <div style="border-left: inset; border-width: thin; height: 200px; padding-left: inherit">
+
+                        <div class="content-wrapper">
+                            <strong>{{newPost.Header}}</strong>
+                            <br />
+                            <p>
+                                {{newPost.Description}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
